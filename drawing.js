@@ -139,12 +139,12 @@ function start() {
   part_circle  = new Circle(250, 250, initial_rad * 0.5);
 
   whole_circle.move(200, 250);
-  whole_circle.set_radius(0.5 * initial_rad);
+  whole_circle.set_radius(Math.sqrt(0.5) * initial_rad);
   whole_circle.set_color(0.5 * 220, 50, 50);
   whole_circle.set_ratio_term(1);
 
   part_circle.move(300, 250);
-  part_circle.set_radius(0.5 * initial_rad);
+  part_circle.set_radius(Math.sqrt(0.5) * initial_rad);
   part_circle.set_color(0.5 * 220, 50, 50);
   part_circle.set_ratio_term(1);
 
@@ -161,17 +161,17 @@ function get_input() {
   numerator = approx[0];
   denominator = approx[1];
 
-  numerator_ratio = numerator / (numerator + denominator);
-  denominator_ratio = denominator / (numerator + denominator);
+  numerator_ratio = num / Math.sqrt(num * num + 1);
+  denominator_ratio = 1 / Math.sqrt(num * num + 1);
   console.log(numerator, denominator)
 
   whole_circle.move(200, 250);
-  whole_circle.set_radius(numerator_ratio * initial_rad);
+  whole_circle.set_radius(Math.sqrt(numerator_ratio) * initial_rad);
   whole_circle.set_color(numerator_ratio * 220, 50, 50);
   whole_circle.set_ratio_term(numerator);
 
   part_circle.move(300, 250);
-  part_circle.set_radius(denominator_ratio * initial_rad);
+  part_circle.set_radius(Math.sqrt(denominator_ratio) * initial_rad);
   part_circle.set_color(denominator_ratio * 220, 50, 50);
   part_circle.set_ratio_term(denominator);
 
@@ -182,7 +182,7 @@ function handle_click() {
   return false;
 }
 
-
+// http://stackoverflow.com/questions/14002113/how-to-simplify-a-decimal-into-the-smallest-possible-fraction
 function rational_approximation(num) {
   var tolerance = 1.0E-15;
   var x = num;
