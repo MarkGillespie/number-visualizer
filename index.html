@@ -2,6 +2,7 @@
   <title>Numbers</title>
   <script type="text/javascript" src="drawing.js"></script>
   <link rel="stylesheet" type="text/css" href="number_style.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 </head>
 
 <body onload="start();">
@@ -9,7 +10,7 @@
     <canvas id="main_canvas" width="500" height="500"></canvas></br>
 
     <form action="#" onSubmit="return handle_click()">
-      <input type="text" name="number" id="number">
+      <input type="text" name="number" id="number" class="textbox" autocomplete="off">
       <button id="submit_button" type="submit">Go</button>
     </form>
 

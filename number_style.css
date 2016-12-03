@@ -1,3 +1,39 @@
 body {
-    background-color: lightblue;
+  background-color: white;
+}
+
+.textbox {
+  height: 40px;
+  width: 100px;
+  position: relative;
+  border: 2px solid #cdcdcd;
+  border-color: rgb(220, 220, 200);
+  border-radius:10px;
+  text-align: center;
+  font-size: 30px;
+
+ 
+  vertical-align: middle;
+  outline: none; /* removes the default outline */
+}
+
+.textbox:focus {
+  border-color: rgba(60,100,200,.50);
+}
+
+button {
+  height: 40px;
+  vertical-align: middle;
+  border-radius:10px;
+
+  box-shadow: none;
+  display: inline-block;
+  border: none;
+  padding-right: 0.5em;
+  padding-left: 0.5em;
+  background-color: rgba(60, 100, 200, 0.70);
+  color: white;
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+
 }
